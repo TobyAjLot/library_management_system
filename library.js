@@ -46,7 +46,6 @@ export default class Library {
   /**
    * Adds a new user to the library.
    * @param {object} user - The user object to add.
-   * @param {number} user.id - The ID of the user.
    * @param {string} user.name - The name of the user.
    * @returns {object} The newly added user.
    */
@@ -165,14 +164,14 @@ function main() {
   const library = new Library();
 
   // Adding a new user
-  const newUser = library.addUser({ id: 1, name: 'Tobi' });
+  const newUser = library.addUser({ name: 'Tobi' });
   console.log(newUser);
 
   // Adding a new book
   const newBook = library.addBook({
-    title: "Harry Potter and the Philosopher's stone",
+    title: 'Harry Potter and the Prisoner of Azkaban',
     author: 'J.K Rowling',
-    isbn: 12345,
+    isbn: 12347,
   });
   console.log(newBook);
 

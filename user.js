@@ -2,18 +2,44 @@
 export default class User {
   /** Initialize the user collection */
   constructor() {
-    this.users = [];
+    this.users = [
+      {
+        id: 1,
+        name: 'Harry',
+        borrowedBooks: [],
+      },
+      {
+        id: 2,
+        name: 'Hermione',
+        borrowedBooks: [],
+      },
+      {
+        id: 3,
+        name: 'Ronald',
+        borrowedBooks: [],
+      },
+      {
+        id: 4,
+        name: 'Nevile',
+        borrowedBooks: [],
+      },
+      {
+        id: 5,
+        name: 'Draco',
+        borrowedBooks: [],
+      },
+    ];
   }
 
   /**
    * Create a new user and add them to the collection.
    * @param {object} user - The user details.
-   * @param {number} user.id - The ID of the user.
    * @param {string} user.name - The name of the user.
    * @returns {object} The newly created user with an added borrowedBooks property.
    */
   create(user) {
-    const newUser = { ...user, borrowedBooks: [] };
+    const id = this.users.length ? this.users[this.users.length - 1].id + 1 : 1;
+    const newUser = { id, ...user, borrowedBooks: [] };
 
     // Save user to database
     this.users.push(newUser);
